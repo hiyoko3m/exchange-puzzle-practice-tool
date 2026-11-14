@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>連鎖練習</title>
+  </head>
+  <body>
+    <main>
+      <div id="board"></div>
+      <aside>
+        <div class="stat"><span class="label">連鎖</span><span id="chain">0</span></div>
+        <div class="stat"><span class="label">次の進行</span><span id="phase">—</span></div>
+        <label class="stat">
+          <span class="label">色数</span>
+          <select id="colors">
+            <option value="5" selected>5</option>
+            <option value="6">6</option>
+          </select>
+        </label>
+        <ul class="help">
+          <li>矢印: カーソル移動</li>
+          <li>Z: 交換</li>
+          <li>Shift: 進行</li>
+          <li>R: リセット</li>
+        </ul>
+      </aside>
+    </main>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
