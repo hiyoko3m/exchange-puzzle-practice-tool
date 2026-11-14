@@ -1,7 +1,18 @@
 import './style.css';
 import { Game, type Phase } from './game';
 
-const SYMBOLS = ['●', '▲', '■', '◆', '★', '♥'];
+// One glyph per color (24x24 paths): cross, crescent, drop, hexagon, X, bolt.
+const SYMBOL_PATHS = [
+  'M9 3h6v6h6v6h-6v6H9v-6H3V9h6z',
+  'M14 2a10 10 0 1 0 8 15A8 8 0 0 1 14 2z',
+  'M12 2C8 8 5 11.5 5 15a7 7 0 0 0 14 0c0-3.5-3-7-7-13z',
+  'M12 2l8.7 5v10L12 22l-8.7-5V7z',
+  'M5.6 3.5 12 9.9l6.4-6.4 2.1 2.1-6.4 6.4 6.4 6.4-2.1 2.1-6.4-6.4-6.4 6.4-2.1-2.1 6.4-6.4-6.4-6.4z',
+  'M13 2 4 14h7l-1 8 9-12h-7z',
+];
+const SYMBOLS = SYMBOL_PATHS.map(
+  (d) => `<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="${d}"/></svg>`,
+);
 const PHASE_LABEL: Record<Phase, string> = { idle: '—', clear: '消去', fall: '落下' };
 
 const boardEl = document.getElementById('board')!;
@@ -31,7 +42,7 @@ function render(): void {
       const p = game.grid[y][x];
       if (p) {
         el.className = `cell c${p.color} ${p.state}`;
-        el.textContent = SYMBOLS[p.color];
+        el.innerHTML = SYMBOLS[p.color];
       } else {
         el.className = game.isBlockedHole(x, y) ? 'cell blocked' : 'cell';
         el.textContent = '';

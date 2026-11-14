@@ -37,6 +37,7 @@ main {
   color: rgba(255, 255, 255, 0.92);
   user-select: none;
 }
+.cell svg { width: 62%; height: 62%; }
 .cell.c0 { background: #d6453d; }
 .cell.c1 { background: #3fa34d; }
 .cell.c2 { background: #3a6fd8; }
