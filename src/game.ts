@@ -12,7 +12,7 @@ export type Cell = Panel | null;
 export type Phase = 'idle' | 'clear' | 'fall';
 
 export const WIDTH = 6;
-export const HEIGHT = 23;
+export const HEIGHT = 12;
 
 export interface Cursor {
   /** Column of the left cell of the 2-wide cursor (0..width-2). */

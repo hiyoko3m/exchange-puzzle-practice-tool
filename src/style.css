@@ -1,5 +1,5 @@
 :root {
-  --cell: 26px;
+  --cell: 40px;
   --bg: #1b1d23;
   --board: #2a2d36;
   --text: #e8e8ec;
@@ -32,7 +32,7 @@ main {
   align-items: center;
   justify-content: center;
   border-radius: 4px;
-  font-size: 16px;
+  font-size: 24px;
   line-height: 1;
   color: rgba(255, 255, 255, 0.92);
   user-select: none;
